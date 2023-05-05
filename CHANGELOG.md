@@ -26,6 +26,12 @@
 
 ## Beta Releases
 
+### 1.0.5 Beta (2023-05-05)
+
+#### Fixes
+- Fixes detection of perfectly pressed chords.
+
+
 ### 1.0.4 Beta (2023-04-27)
 
 #### Features
