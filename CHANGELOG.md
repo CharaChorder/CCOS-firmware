@@ -2,6 +2,36 @@
 
 ## Main Releases
 
+### Version 1.1.0 Main (2023-05-31)
+
+#### Features
+- Adds the chording and spurring timeouts to the GTM.
+- Adds custom integer types to optimize memory usage tailored to each device hardware's need in order to maximize available ram and chordmap lookups.
+- Adds check on chord outputs. If the action code value is above 126, then no space character is added.
+- Adds initial migration of the CC Engine into CCOS.
+
+#### Fixes
+- Fixes detection of perfectly pressed chords.
+- Fixes incorrect behavior of the chord backspacing timeouts.
+- Fixes extraneous outputs in the response of successful Serial API CML C4 commands.
+- Fixes missing space in the response of successful Serial API CML C2 commands.
+- Fixes return of the correct number of hexadecimal action codes in the response of Serial API CML C2 commands when there are multi-byte action codes in the chord output.
+- Fixes the startup output of CharaChorder is Ready to not use the delete key, which caused multiple issues including entering the BIOS on some computers during startup.
+- Fixes extraneous logging commands that interfered with the SerialAPI and were not flagged as logging outputs.
+- Fixes an issue with lingering old chordmaps that caused the device to think that the chord output was extremely long, which could not fit into memory and would lock up the device. These are flagged and the chord output lengths set to zero.
+- Fixed the resources in the GTM to only output hyperlinks through keyboard output for non Windows OSes where Ctrl+R does not have a meaning.
+- Fixes spacing issue with functional keymaps with number positions and backspace or delete.
+
+#### Changes
+- Changes the startup chords to remove 'sa' for 'saw' which was overwriting 'as' for 'as'.
+- Changes the hard coded DUP+g chordmap in the CharaChorder One. This still remains in the CharaChorder Lite.
+- Changes HID keyboard reports to be non-blocking in a buffer so that if a relatively high keystroke delay is used (ie above 1000us), the keystroke delay will not block incoming key press and release actions that could affect chord detection. A high keystroke delay may be necessary for a host OS that has a low power mode enabled.
+- Changes the GTM to output correctly with the non-blocking keystroke delay buffer.
+- Changes the learning resources in the GTM from launchpad to iq-eq.io.
+- Changes the default arpeggiate timeout from 800ms to 600ms.
+- Changes the default debounce on the CharaChorder Lite from 20ms to 12ms.
+
+
 ### Version 1.0.1 Main (2023-03-09)
 
 #### Features
