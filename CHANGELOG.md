@@ -2,6 +2,19 @@
 
 ## Main Releases
 
+### Version 1.1.1 Main (2023-06-13)
+
+#### Fixes
+- On the Lite, setting LED related variables through the Serial API correctly updates the variable values.
+
+#### Changes
+- On the Lite, disables arpeggiates by default.
+- Removes single quote as a separator.
+- Adds left and right parentheses as separators; note, these must be activated directly, not with a shift key.
+- On the Lite, adds an on/off variable for the LEDs that is separate from brightness.
+- On the Lite, adds a submenu in the GTM for the LEDs.
+
+
 ### Version 1.1.0 Main (2023-05-31)
 
 #### Features
