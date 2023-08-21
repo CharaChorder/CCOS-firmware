@@ -2,6 +2,8 @@
 
 ## Main Releases
 
+
+
 ### Version 1.1.1 Main (2023-06-13)
 
 #### Fixes
@@ -109,6 +111,18 @@
 - Changes the learning resources in the GTM from launchpad to iq-eq.io.
 - Changes the default arpeggiate timeout from 800ms to 600ms.
 - Changes the default debounce on the CharaChorder Lite from 20ms to 12ms.
+
+
+
+### 1.1.3 Beta (2023-08-21)
+
+#### Features
+- Adds debug methods to the Serial API for the CCX to enable a pass through of the USB host chip's serial output.
+
+#### Fixes
+- Fixes CCX where only up to 4 keys would be recognized.
+- Adds 0s to indicate success at the end of RST sub commands for consistency.
+
 
 
 
