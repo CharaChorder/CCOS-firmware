@@ -3,6 +3,24 @@
 ## Main Releases
 
 
+### Version 1.1.3 Main (2023-09-05)
+
+#### Features
+- Adds first CCX main update
+- Adds binaries for the CC Engine
+- Adds UART API for the CC Engine and CCX
+- Sets CC Lite M0 keyscanning to an independent interrupt method at 1000Hz to reduce missed key events
+- Adds additional debugging methods to the Serial API for pass through to other chips and devices
+
+#### Fixes
+- Fixes CCX where only up to 4 keys would be recognized.
+- Adds 0s to indicate success at the end of RST sub commands for consistency.
+- Fixes Serial API printout of the detected Chord in hexadecimal even when that chord is not detected in the chordmap library on the device
+
+#### Changes
+- Updates CCX backer names
+- Changes CDC Descriptors for the Serial API for clarity
+
 
 ### Version 1.1.1 Main (2023-06-13)
 
