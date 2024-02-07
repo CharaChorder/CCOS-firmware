@@ -14,7 +14,7 @@
 
 #### Fixes
 - Fixes CCX where only up to 4 keys would be recognized.
-- Adds 0s to indicate success at the end of RST sub commands for consistency.
+- Adds 0s to indicate success at the end of `RST` sub commands for consistency.
 - Fixes Serial API printout of the detected Chord in hexadecimal even when that chord is not detected in the chordmap library on the device
 
 #### Changes
@@ -46,9 +46,9 @@
 #### Fixes
 - Fixes detection of perfectly pressed chords.
 - Fixes incorrect behavior of the chord backspacing timeouts.
-- Fixes extraneous outputs in the response of successful Serial API CML C4 commands.
-- Fixes missing space in the response of successful Serial API CML C2 commands.
-- Fixes return of the correct number of hexadecimal action codes in the response of Serial API CML C2 commands when there are multi-byte action codes in the chord output.
+- Fixes extraneous outputs in the response of successful Serial API `CML C4` commands.
+- Fixes missing space in the response of successful Serial API `CML C2` commands.
+- Fixes return of the correct number of hexadecimal action codes in the response of Serial API `CML C2` commands when there are multi-byte action codes in the chord output.
 - Fixes the startup output of CharaChorder is Ready to not use the delete key, which caused multiple issues including entering the BIOS on some computers during startup.
 - Fixes extraneous logging commands that interfered with the SerialAPI and were not flagged as logging outputs.
 - Fixes an issue with lingering old chordmaps that caused the device to think that the chord output was extremely long, which could not fit into memory and would lock up the device. These are flagged and the chord output lengths set to zero.
@@ -77,17 +77,35 @@
 ### Version 1.0.0 Main (2023-03-08)
 
 ### Features
-- Adds left shift and right shift as a chord for capslock toggle, available through the RST FUNC command through the Serial API.
+- Adds left shift and right shift as a chord for capslock toggle, available through the `RST FUNC` command through the Serial API.
 
 ### Fixes
-- Fixes issue for reporting version number and type with the Serial API VERSION command
-- Fixes RST FUNC commands for the CC1 where numbers are used for backspace, delete, and left and rigth arrow keys to use the default primary layout's characters instead of numbers which are on the num-shift layer
+- Fixes issue for reporting version number and type with the Serial `API VERSION` command
+- Fixes `RST FUNC` commands for the CC1 where numbers are used for backspace, delete, and left and rigth arrow keys to use the default primary layout's characters instead of numbers which are on the num-shift layer
 
 ### Changes
 - Sets the default for enable compound chording to false while this feature is developed in beta releases
 
 
 ## Beta Releases
+
+### 1.9.9 Beta (2024-02-06)
+
+#### Features
+- Adds press_next and release_next action code functionality to allow for macros for chord outputs.
+- Adds Compound Chordmaps (up to two levels). This feature is disabled by default.
+- Adds Compound Chordmap settings to the GTM. This includes enable/disable as well as timeouts.
+
+#### Fixes
+- Fixes defect of processing arpeggiates after a non-chord followed by a successful chord.
+- Fixes defect of incorrectly adding a space after a minus or slash arpeggiate.
+- Fixes the return output for the Serial API `CML C4` delete chordmap command.
+
+#### Changes
+- Changes impulse chording created chord outputs that use the right space bar (typically for a Lite) to output the normal spacebar to keep the output in the ASCII range.
+- Changes the default keystroke delay from 480us to 1200us to be within the Full USB report frequency specification limit of 1kHz.
+- Changes some hardcoded functional chordmaps in the CC1 to optionally installable using the Serial API `RST FUNC` command.
+
 
 ### 1.0.5 Beta (2023-05-05)
 
@@ -102,9 +120,9 @@
 
 #### Fixes
 - Fixes incorrect behavior of the chord backspacing timeouts.
-- Fixes extraneous outputs in the response of successful Serial API CML C4 commands.
-- Fixes missing space in the response of successful Serial API CML C2 commands.
-- Fixes return of the correct number of hexadecimal action codes in the response of Serial API CML C2 commands when there are multi-byte action codes in the chord output.
+- Fixes extraneous outputs in the response of successful Serial API `CML C4` commands.
+- Fixes missing space in the response of successful Serial API `CML C2` commands.
+- Fixes return of the correct number of hexadecimal action codes in the response of Serial API `CML C2` commands when there are multi-byte action codes in the chord output.
 
 #### Changes
 - Changes the startup chords to remove 'sa' for 'saw' which was overwriting 'as' for 'as'.
@@ -139,7 +157,7 @@
 
 #### Fixes
 - Fixes CCX where only up to 4 keys would be recognized.
-- Adds 0s to indicate success at the end of RST sub commands for consistency.
+- Adds 0s to indicate success at the end of `RST` sub commands for consistency.
 
 
 
@@ -158,7 +176,7 @@
 
 #### Features
 - Adds horizontal mouse scroll capabilities to the CC1 M0 and the CC Lite M0.
-- Adds Serial API command, RST FUNC, which writes backspace, delete, and left and right arrow key repeat chordmaps.
+- Adds Serial API command, `RST FUNC`, which writes backspace, delete, and left and right arrow key repeat chordmaps.
 
 #### Fixes
 - Fixes incorrect backspacing of incorrect chorded input, especially when the number of incorrect input keys is more than 12.
