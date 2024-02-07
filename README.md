@@ -16,14 +16,8 @@ Read about the latest changes [here](CHANGELOG.md).
 
 # Update instructions
 
-> *Note*: If your device shipped before 2023 and has not been migrated to CCOS, you must do that [here](https://www.charachorder.com/pages/migrating-to-ccos) before following these steps.
+See the docs for instructions on how to update your device.  If you'd like to use a beta firmware, download it above for use in the following instructions:
 
-1. Using Google Chrome, or a Chromium based browser, go to your device manager: https://www.iq-eq.io/#/manager
-2. Click “Connect”.
-3. Select your device, then click the blue "Connect" button in the pop-up
-4. Click “Bootloader”. Your CharaChorder will appear as an external storage device (for example, “Drive F:” on Windows or “Arduino” on Mac)
-5. Download your update file from this repository.
-
-> *Note:* If you have a CharaChorder Lite that was delivered before October 1st, 2022 you will need to use the file which corresponds to the MO chipset. Otherwise CharaChorder Lite users should use the S2 chipset.
-6. Drag and drop the new `CURRENT.UF2` update file to your CharaChorder (Drive F:, etc) and overwrite the existing file. While your device reboots, place your cursor into a text editor and wait to see 'CCOS is ready' 
-> *Note:* the file MUST be named `CURRENT.UF2`. For example, `CURRENT.UF2(1)` will NOT work
+[CharaChorder One](https://docs.charachorder.com/CharaChorder%20One.html#updating-the-firmware)
+[CharaChorder Lite](https://docs.charachorder.com/CharaChorder_Lite.html#updating-the-firmware)
+[CharaChorder X](https://docs.charachorder.com/CharaChorder%20X.html#updating-the-firmware)
