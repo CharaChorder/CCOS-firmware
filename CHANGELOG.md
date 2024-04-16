@@ -93,6 +93,11 @@
 
 ## Beta Releases
 
+### 1.1.10 Beta (2024-04-15)
+
+#### Fixes
+- Fixes an instance where a key would be stuck outputting until any other key was pressed
+
 ### 1.9.9 Beta (2024-02-06)
 
 #### Features
