@@ -2,6 +2,10 @@
 
 ## Main Releases
 
+### Version 1.1.4 Main (2024-04-15)
+
+#### Fixes
+- Fixes an instance where a key would be stuck outputting until any other key was pressed
 
 ### Version 1.1.3 Main (2023-09-05)
 
@@ -88,6 +92,11 @@
 
 
 ## Beta Releases
+
+### 1.9.10 Beta (2024-04-15)
+
+#### Fixes
+- Fixes an instance where a key would be stuck outputting until any other key was pressed
 
 ### 1.9.9 Beta (2024-02-06)
 
