@@ -93,6 +93,27 @@
 
 ## Beta Releases
 
+### 2.0.0 Beta (2024-07-13)
+
+#### Features
+- Adds compound chord support for up to 256 levels. To create a compound chord, in the impulse menu press Shift+Enter instead of Enter.
+- Adds ability to activate and create dynamic chord libraries. Adds two new action codes, Base Library and Dynamic Library
+  - Base Library can be assigned to a switch location or output in a chord.  Re-activates your base chord library, and deactivates any currently active dynamic chord library.
+  - Dynamic Library must be used as part of a chord output.  Allows for the activation & creation of dynamic chord libraries. When included as part of a chord output, that chord's input becomes the seed for a dynamic chord library, and that library is activated. Any new chords created while a dynamic library is active are established one level above its seed.
+
+#### Fixes
+- Fixed all known 1.9.9-beta bugs related to compound chords including:
+  - Support for modifiers
+  - Support for arpeggiates
+  - Ability to overwrite compound chords
+  - Support in the development branch manager to view and backup compound chords
+  - Fixed timeout not ending after typing after a compound chord
+
+#### Changes
+- Removes compound chord on/off switch from GTM
+- Changed the architecture of compound chords so all previous compound chords from beta will no longer work
+- Reworked compound chord view in impulse to show all levels of the chord
+
 ### 1.9.10 Beta (2024-04-15)
 
 #### Fixes
