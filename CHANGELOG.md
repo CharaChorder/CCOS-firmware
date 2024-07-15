@@ -80,14 +80,14 @@
 
 ### Version 1.0.0 Main (2023-03-08)
 
-### Features
+#### Features
 - Adds left shift and right shift as a chord for capslock toggle, available through the `RST FUNC` command through the Serial API.
 
-### Fixes
+#### Fixes
 - Fixes issue for reporting version number and type with the Serial `API VERSION` command
 - Fixes `RST FUNC` commands for the CC1 where numbers are used for backspace, delete, and left and rigth arrow keys to use the default primary layout's characters instead of numbers which are on the num-shift layer
 
-### Changes
+#### Changes
 - Sets the default for enable compound chording to false while this feature is developed in beta releases
 
 
@@ -137,6 +137,16 @@
 - Changes some hardcoded functional chordmaps in the CC1 to optionally installable using the Serial API `RST FUNC` command.
 
 
+### 1.1.3 Beta (2023-08-21)
+
+#### Features
+- Adds debug methods to the Serial API for the CCX to enable a pass through of the USB host chip's serial output.
+
+#### Fixes
+- Fixes CCX where only up to 4 keys would be recognized.
+- Adds 0s to indicate success at the end of `RST` sub commands for consistency.
+
+
 ### 1.0.5 Beta (2023-05-05)
 
 #### Fixes
@@ -177,20 +187,6 @@
 - Changes the learning resources in the GTM from launchpad to iq-eq.io.
 - Changes the default arpeggiate timeout from 800ms to 600ms.
 - Changes the default debounce on the CharaChorder Lite from 20ms to 12ms.
-
-
-
-### 1.1.3 Beta (2023-08-21)
-
-#### Features
-- Adds debug methods to the Serial API for the CCX to enable a pass through of the USB host chip's serial output.
-
-#### Fixes
-- Fixes CCX where only up to 4 keys would be recognized.
-- Adds 0s to indicate success at the end of `RST` sub commands for consistency.
-
-
-
 
 ### 1.0.2 Beta (2023-03-09)
 
