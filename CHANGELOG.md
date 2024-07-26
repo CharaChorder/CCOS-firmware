@@ -1,6 +1,10 @@
 # Change Log
 
+
+
 ## Main Releases
+
+Jump to [Beta Releases](#beta-releases)
 
 ### Version 1.1.4 Main (2024-04-15)
 
@@ -92,6 +96,8 @@
 
 
 ## Beta Releases
+
+Jump to [Main Releases](#main-releases)
 
 ### 2.0.0 Beta (2024-07-13)
 
