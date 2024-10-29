@@ -1,5 +1,5 @@
 # CharaChorder OS
-Read about the latest changes [here](CHANGELOG.md).
+Read about the latest changes in the [CHANGELOG](CHANGELOG.md).
 
 # Firmware downloads
 
