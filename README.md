@@ -6,8 +6,8 @@ Read about the latest changes [here](CHANGELOG.md).
 
 | Device | Latest Main Release | Latest Beta Release|
 | ----------- | ----------- | ----------- |
-| CharaChorder One | [v2.0.1](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_One/M0/Main/CCOS_One_M0_v2.0.1/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_One/M0/Beta/CCOS_One_M0_v2.0.0-beta/CURRENT.UF2) |
-| CharaChorder Two | [v2.0.1](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Two/S2/Main/CCOS_Two_S2_v2.0.1/CURRENT.UF2) |  |
+| CharaChorder One M0 | [v2.0.1](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_One/M0/Main/CCOS_One_M0_v2.0.1/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_One/M0/Beta/CCOS_One_M0_v2.0.0-beta/CURRENT.UF2) |
+| CharaChorder Two S3 | [v2.0.1](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Two/S3/Main/CCOS_Two_S3_v2.0.1/CURRENT.UF2) |  |
 | CharaChorder Lite M0 | [v2.0.1](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Lite/M0/Main/CCOS_Lite_M0_v2.0.1/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Lite/M0/Beta/CCOS_Lite_M0_v2.0.0-beta/CURRENT.UF2) |
 | CharaChorder Lite S2 | [v2.0.1](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Lite/S2/Main/CCOS_Lite_S2_v2.0.1/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Lite/S2/Beta/CCOS_Lite_S2_v2.0.0-beta/CURRENT.UF2) |
 | CharaChorder X S2 | [v2.0.1](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_X/S2/Main/CCOS_X_S2_v2.0.1/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_X/S2/Beta/CCOS_X_S2_v2.0.0-beta/CURRENT.UF2) |
