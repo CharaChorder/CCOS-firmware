@@ -11,8 +11,8 @@ Jump to [Beta Releases](#beta-releases)
 ## Features
 - Added [compound chording and dynamic libraries](https://www.youtube.com/watch?v=Z_SPoXafMh4)
 - Added new action codes for pressing and releasing to allow for more complex macros as chord outputs
-- CharaChorder 2: support for the new device
-- CharaChorder 2, Lite, X, and Engine now support OTA updates in addition to the UF2 based firmware update
+- CharaChorder Two: support for the new device
+- CharaChorder Two, Lite, X, and Engine now support OTA updates in addition to the UF2 based firmware update
 
 ## Fixes
 - Fixed bugs related to using right space in chord output
