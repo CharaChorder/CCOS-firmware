@@ -1,5 +1,4 @@
-v2.0.1# [Changelog](CHANGELOG.md)
-
+# CharaChorder OS
 Read about the latest changes [here](CHANGELOG.md).
 
 # Firmware downloads
