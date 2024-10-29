@@ -6,6 +6,29 @@
 
 Jump to [Beta Releases](#beta-releases)
 
+### Version 2.0.0/2.0.1 (2024-10-29)
+
+## Features
+- Added [compound chording and dynamic libraries](https://www.youtube.com/watch?v=Z_SPoXafMh4)
+- Added new action codes for pressing and releasing to allow for more complex macros as chord outputs
+- CharaChorder 2: support for the new device
+- CharaChorder 2, Lite, X, and Engine now support OTA updates in addition to the UF2 based firmware update
+
+## Fixes
+- Fixed bugs related to using right space in chord output
+- Fixed bug where you couldn't use past tense modifier arpeggiately
+- Fixed Serial API not returning 0 on a successful delete
+- Fixed bug where "chording" an unmapped chord was adding a space after arpeggiate punctuation
+- Fixed bug where chord was swapping between all caps and desired output
+- Fixed bug where chording a word after arpeggiated punctuation was deleting the space after the punctuation
+- Fixed bug where the arpeggiate window after a chord wasn't ended properly
+- Fixed bug where the mouse would continue moving on CharaChorder One in 2.0.0
+
+## Changes
+- Removed several hardcoded chords and added them to functional chords
+- Chord logging turned off in serial output by default now
+- Versions are now following a [semver versioning scheme](https://semver.org/)
+
 ### Version 1.1.4 Main (2024-04-15)
 
 #### Fixes
