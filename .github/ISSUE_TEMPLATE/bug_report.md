@@ -2,6 +2,8 @@
 name: Bug report
 about: Create a report to help us improve
 type: bug
+projects:
+  - CharaChorder/1
 assignees:
   - Theaninova
 ---

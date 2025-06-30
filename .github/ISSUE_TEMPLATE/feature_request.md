@@ -2,6 +2,8 @@
 name: Feature request
 about: Suggest an idea for this project
 type: feature
+projects:
+  - CharaChorder/1
 assignees:
   - Theaninova
 ---
