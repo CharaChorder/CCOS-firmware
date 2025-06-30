@@ -1,10 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: 'Enhancement: '
-labels: enhancement
-assignees: ''
-
+type: feature
+assignees:
+  - Theaninova
 ---
 
 **Is your feature request related to a problem? Please describe.**

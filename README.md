@@ -1,22 +1,44 @@
-# CharaChorder OS
-Read about the latest changes in the [CHANGELOG](CHANGELOG.md).
+# CCOS Issue Repo
 
-# Firmware downloads
+## Getting Updates
 
-| Device | Latest Main Release | Latest Beta Release|
-| ----------- | ----------- | ----------- |
-| CharaChorder One M0 | [v1.1.4](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_One/M0/Main/CCOS_One_M0_v1.1.4/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_One/M0/Beta/CCOS_One_M0_v2.0.0-beta/CURRENT.UF2) |
-| CharaChorder Two S3 | [v2.0.1](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Two/S3/Main/CCOS_Two_S3_v2.0.1/CURRENT.UF2) |  |
-| CharaChorder Lite M0 | [v1.1.4](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Lite/M0/Main/CCOS_Lite_M0_v1.1.4/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Lite/M0/Beta/CCOS_Lite_M0_v2.0.0-beta/CURRENT.UF2) |
-| CharaChorder Lite S2 | [v1.1.4](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Lite/S2/Main/CCOS_Lite_S2_v1.1.4/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Lite/S2/Beta/CCOS_Lite_S2_v2.0.0-beta/CURRENT.UF2) |
-| CharaChorder X S2 | [v1.1.4](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_X/S2/Main/CCOS_X_S2_v1.1.4/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_X/S2/Beta/CCOS_X_S2_v2.0.0-beta/CURRENT.UF2) |
-| CharaChorder Engine S2 | [v1.1.4](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Engine/S2/Main/CCOS_Engine_S2_v1.1.4/CURRENT.UF2) | [v2.0.0-beta](https://github.com/CharaChorder/CCOS-firmware/raw/main/CharaChorder_Engine/S2/Beta/CCOS_Engine_S2_v2.0.0-beta/CURRENT.UF2) |
+The latest firmware for each device is now available on https://charachorder.io/ccos/
 
-# Update instructions
-
-See the docs for instructions on how to update your device.  If you'd like to use a beta firmware, download it above for use in the following instructions:
+_Note: pre-2.1.0 changelogs are incomplete and located at [CHANGELOG.md](./CHANGELOG.md) instead of directly on the update page._
 
 - [CharaChorder One](https://docs.charachorder.com/CharaChorder%20One.html#updating-the-firmware)
 - [CharaChorder Two](https://docs.charachorder.com/CharaChorder%20One.html#updating-the-firmware)
 - [CharaChorder Lite](https://docs.charachorder.com/CharaChorder_Lite.html#updating-the-firmware)
 - [CharaChorder X](https://docs.charachorder.com/CharaChorder%20X.html#updating-the-firmware)
+
+## Developer Notes
+
+### Serial API
+
+Serial API docs can be found at https://docs.charachorder.com/SerialAPI.html.
+
+A reference implementation in TypeScript for the web is also available as part of https://charachorder.io/ on
+https://github.com/CharaChorder/DeviceManager/blob/master/src/lib/serial/device.ts.
+
+### Firmware Meta API
+
+Firmware Meta API is an important part for developing tooling that interacts with CCOS and used by https://charachorder.io/.
+
+It allows you to get the following data in JSON format:
+
+- [`https://charachorder.io/firmware/`](https://charachorder.io/firmware/) Available CCOS devices
+- [`https://charachorder.io/firmware/{device}/`](https://charachorder.io/firmware/m4g_s3/) Publicly Available Builds
+- [`https://charachorder.io/firmware/{device}/{version}/meta.json`](https://charachorder.io/firmware/m4g_s3/2.1.0/meta.json) Firmware Specific Meta, such as
+  - Version Name and commit date
+  - List of firmware files
+  - Factory Settings, Chords and Layout
+  - Changelog
+  - Detailed list of all action codes
+  - Detailed list of all settings
+
+Some of this metadata may not be available for older versions and refer to the [device manager implementation](https://github.com/CharaChorder/DeviceManager/tree/master/src/lib/meta).
+
+### Communal Source Program
+
+Right now we provide access to the CCOS source code repository to select applicants.
+
