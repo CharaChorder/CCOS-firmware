@@ -1,5 +1,7 @@
 # CCOS Issue Repo
 
+_You can make pull requests to modifier rules directly to this repo via the files in `grammar/`._
+
 ## General Troubleshooting Steps
 
 Hardware can be weird sometimes. Before reporting an issue, make sure you
