@@ -1,0 +1,2 @@
+pyyaml
+unittest-xml-reporting
