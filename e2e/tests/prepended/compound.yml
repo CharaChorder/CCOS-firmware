@@ -7,6 +7,9 @@ test:
         output: [t, e, s, t]
       - input: [[i, n, g], [t, s, e]]
         output: [t, e, s, t, i, n, g]
+    settings:
+      chording:
+        concatenation style: prepended
     idle: true
 
   - press: [i, n, g]
@@ -24,8 +27,8 @@ test:
   - keys: [i]
   - keys: [n]
   - keys: [g]
-  - keys: [SPACE]
   - keys: []
+    idle: true
 
   - press: [s, e, t]
     keys: [e, s, t]
@@ -37,12 +40,13 @@ test:
   - keys: [BKSP]
   - keys: []
   - keys: [BKSP]
+  - keys: [SPACE]
   - keys: [t]
   - keys: [e]
   - keys: [s]
   - keys: [t]
-  - keys: [SPACE]
   - keys: []
+    idle: true
 
   - press: [i, n, g]
     keys: [g, i, n]
@@ -64,6 +68,7 @@ test:
   - keys: [BKSP]
   - keys: []
   - keys: [BKSP]
+  - keys: [SPACE]
   - keys: [t]
   - keys: [e]
   - keys: [s]
@@ -71,7 +76,5 @@ test:
   - keys: [i]
   - keys: [n]
   - keys: [g]
-  - keys: [SPACE]
   - keys: []
-
-  - idle: true
+    idle: true

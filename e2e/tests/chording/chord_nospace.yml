@@ -20,5 +20,4 @@ test:
   - keys: [s]
   - keys: [t]
   - keys: []
-
-  - idle: true
+    idle: true

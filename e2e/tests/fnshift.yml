@@ -20,6 +20,10 @@ test:
   - release: [a]
   - step: 16
     keys: []
+    idle: true
+
+  - step: 16
+    idle: true
 
   - press: [l]
   - press: [a]
@@ -27,5 +31,4 @@ test:
   - release: [l, a]
   - step: 16
     keys: []
-
-  - idle: true
+    idle: true

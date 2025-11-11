@@ -113,3 +113,15 @@ class CCOSWrapper:
             for key, action in enumerate(row):
                 command = f"VAR B3 {profile}{layer + 1} {key}"
                 self.serial_verify(command, f"{command} {action} 0")
+
+    def set_setting(self, category: str, item: str, value: str | int):
+        setting_info: dict = self.ccos.settings[category][item]
+        value_id: int = (
+            setting_info["enum"].index(value) if isinstance(value, str) else value
+        )
+        assert value_id >= 0, f"Invalid setting value: {value}"
+        command_str = f"VAR B2 0x{setting_info['id']:02X} {value_id}"
+        self.serial_verify(
+            command_str,
+            f"{command_str} 0",
+        )

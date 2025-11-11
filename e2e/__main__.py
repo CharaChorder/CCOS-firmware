@@ -3,7 +3,7 @@ import os
 import urllib.request
 import json
 
-DEFAULT_VERSION = "2.2.0-beta.12+c733b95"
+DEFAULT_VERSION = "2.2.0-beta.19"
 
 builds_dir = os.path.join(os.path.dirname(__file__), "builds")
 

@@ -1,8 +1,9 @@
 import os
 import json
 import yaml
-from unittest import TestSuite, TestCase, main
+from unittest import TestSuite, TestCase
 import io
+import re
 from xmlrunner import XMLTestRunner
 from xmlrunner.extra.xunit_plugin import transform
 
@@ -37,6 +38,8 @@ class CCOSTest(TestCase):
         self.wrapper.ccos.unload()
 
     def runTest(self):
+        print(f"{BOLD}Running test: {self.id()}{RESET}")
+
         assert isinstance(self.test_case["test"], list)
         for command in self.test_case["test"]:
             print(f"{BOLD}============={RESET}")
@@ -58,6 +61,13 @@ class CCOSTest(TestCase):
                 for chord in command["verifyChords"]:
                     self.wrapper.check_chord(chord["input"], chord["output"])
                     print(f"{BLUE}...1ms{RESET}")
+            if "settings" in command:
+                for category_name, category in command["settings"].items():
+                    for setting_name, setting_value in category.items():
+                        self.wrapper.set_setting(
+                            category_name, setting_name, setting_value
+                        )
+
             if "remap" in command:
                 print(json.dumps(command))
                 for layer, remaps in command["remap"].items():
@@ -90,15 +100,28 @@ class CCOSTest(TestCase):
             self.wrapper.millis += command["step"]
             self.wrapper.ccos.update(self.wrapper.millis)
             print(f"{BLUE}...{command['step']}ms{RESET}")
-            if "keys" in command:
+            if "keys" in command or "modifiers" in command:
+                modifiers = command.get("modifiers", {})
+                keys = command.get("keys", [])
                 print(
-                    f"{YELLOW}? modifiers=[{', '.join(command.get('modifiers', []))}] keys=[{', '.join(command['keys'])}]{RESET}"
+                    f"{YELLOW}? modifiers=[{', '.join(modifiers.keys())}] keys=[{', '.join(keys)}]{RESET}"
                 )
                 self.assertGreater(len(self.wrapper.reports), 0)
                 report = self.wrapper.reports.pop(0)
-                keys = [self.wrapper.ccos.toKeycode(key) for key in command["keys"]]
+                expected_modifiers = (
+                    (modifiers.get("lctrl", False) << 0)
+                    | (modifiers.get("lshift", False) << 1)
+                    | (modifiers.get("lalt", False) << 2)
+                    | (modifiers.get("lmeta", False) << 3)
+                    | (modifiers.get("rctrl", False) << 4)
+                    | (modifiers.get("rshift", False) << 5)
+                    | (modifiers.get("ralt", False) << 6)
+                    | (modifiers.get("rmeta", False) << 7)
+                )
+                expected_keys = [self.wrapper.ccos.toKeycode(key) for key in keys]
                 report.keys = [key for key in report.keys if key != 0]
-                self.assertEqual(report.keys, keys)
+                self.assertEqual(report.keys, expected_keys)
+                self.assertEqual(report.modifiers, expected_modifiers)
 
             self.assertEqual(
                 0,
@@ -152,23 +175,34 @@ class FactoryTest(TestCase):
         self.wrapper.check_chord_backup([])
 
 
-def collect_tests(build_dir: str) -> TestSuite:
-    tests: list[TestCase] = [FactoryTest(build_dir)]
+def collect_tests(build_dir: str, filter: str | None) -> TestSuite:
+    filter_match = re.compile(filter) if filter is not None else None
+    tests: list[TestCase] = (
+        [FactoryTest(build_dir)]
+        if filter_match is None or filter_match.match("factory")
+        else []
+    )
     for root, _, files in os.walk(tests_dir):
+        dirs = os.path.relpath(root, tests_dir).split(os.sep)
+        if dirs == ["."]:
+            dirs = []
         for file in files:
             if not file.endswith(".yml"):
                 continue
+            test_name = ".".join([*dirs, file.removesuffix(".yml")])
+            if filter_match is not None and not filter_match.match(test_name):
+                continue
             with open(os.path.join(root, file), "r") as f:
-                test = CCOSTest(build_dir, file.removesuffix(".yml"), yaml.safe_load(f))
+                test = CCOSTest(build_dir, test_name, yaml.safe_load(f))
                 tests.append(test)
     return TestSuite(tests)
 
 
-def run_tests(build_dir: str):
+def run_tests(build_dir: str, filter: str | None = None):
     report_file = os.path.join(e2e_dir, "report.xml")
     if os.path.exists(report_file):
         os.remove(report_file)
-    suite = collect_tests(build_dir)
+    suite = collect_tests(build_dir, filter)
     out = io.BytesIO()
     runner = XMLTestRunner(output=out)
     runner.run(suite)

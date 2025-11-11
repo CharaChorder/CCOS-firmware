@@ -63,6 +63,7 @@ class CCOS:
     action_to_id: dict[int, str]
     id_to_action: dict[str, int]
     id_to_keycode: dict[str, int]
+    settings: dict[str, dict[str, dict]]
 
     meta: dict
     actions: dict
@@ -75,6 +76,7 @@ class CCOS:
         self.action_to_id = {}
         self.id_to_action = {}
         self.id_to_keycode = {}
+        self.settings = {}
         self.lib = cdll.LoadLibrary(lib_path)
         self.idle = False
 
@@ -121,7 +123,20 @@ class CCOS:
 
         load_factory_defaults(self.meta["factory_defaults"])
 
-        with open(os.path.join(os.path.dirname(lib_path), "actions.json"), "r") as f:
+        with open(
+            os.path.join(os.path.dirname(lib_path), self.meta["settings"]), "r"
+        ) as f:
+            settings = json.load(f)
+            for category in settings:
+                category_name = category["name"]
+                self.settings[category_name] = {}
+                for item in category["items"]:
+                    item_name = item["name"]
+                    self.settings[category_name][item_name] = item
+
+        with open(
+            os.path.join(os.path.dirname(lib_path), self.meta["actions"]), "r"
+        ) as f:
             self.actions = json.load(f)
         for group in self.actions:
             group_actions = group["actions"]

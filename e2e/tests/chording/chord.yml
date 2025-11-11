@@ -1,4 +1,3 @@
-$schema: ../schema.json
 test:
   - clearChords: true
     addChords:
@@ -22,5 +21,4 @@ test:
   - keys: [t]
   - keys: [SPACE]
   - keys: []
-
-  - idle: true
+    idle: true
